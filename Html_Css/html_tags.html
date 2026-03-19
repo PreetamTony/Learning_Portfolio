@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All HTML Tags</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>HTMLTags</h1>
+        <p>This page has major HTML tags examples</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- TEXT FORMATTING -->
+        <section>
+            <h2>Text Formatting</h2>
+            <p><abbr title="HyperText Markup Language">HTML</abbr> is used for web pages.</p>
+            <p><mark>Marked text</mark></p>
+            <p><del>Deleted text</del></p>
+            <p><ins>Inserted text</ins></p>
+            <p>Subscript: H<sub>2</sub>O</p>
+            <p>Superscript: x<sup>2</sup></p>
+            <p><strong>Strong importance</strong></p>
+            <p><em>Emphasized text</em></p>
+            <p><b>Bold</b></p>
+            <p><i>Italic</i></p>
+            <p><u>Underline text</u></p>
+        </section>
+
+        <!-- LISTS -->
+        <section>
+            <h2>Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>Step 1</li>
+                <li>Step 2</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Markup language</dd>
+            </dl>
+        </section>
+
+        <!-- LINKS & MEDIA -->
+        <section>
+            <h2>Links & Media</h2>
+            <a href="https://www.google.com" target="_blank">Visit Google</a><br><br>
+
+            <img src="https://via.placeholder.com/150" alt="Sample Image">
+
+            <figure>
+                <img src="https://via.placeholder.com/150" alt="Figure Image">
+                <figcaption>Sample Figure Caption</figcaption>
+            </figure>
+
+            <audio controls>
+                <source src="sample.mp3" type="audio/mpeg">
+            </audio>
+
+            <video width="300" controls>
+                <source src="sample.mp4" type="video/mp4">
+            </video>
+        </section>
+
+        <!-- TABLE -->
+        <section>
+            <h2>Table</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">End of Table</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- FORM -->
+        <section>
+            <h2>Form</h2>
+
+            <form>
+                <fieldset>
+                    <legend>User Info</legend>
+
+                    <label>Name:</label>
+                    <input type="text"><br><br>
+
+                    <label>Email:</label>
+                    <input type="email"><br><br>
+
+                    <label>Message:</label><br>
+                    <textarea></textarea><br><br>
+
+                    <label>Choose:</label>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select><br><br>
+
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- INTERACTIVE -->
+        <section>
+            <h2 tabindex="-1">Interactive Elements</h2>
+
+            <details>
+                <summary>Click to expand</summary>
+                <p>This is hidden content</p>
+            </details>
+
+            <p>Progress:</p>
+            <progress value="70" max="100"></progress>
+
+            <p>Meter:</p>
+            <meter value="0.6"></meter>
+
+            <p>Time: <time>10:00 AM</time></p>
+        </section>
+
+    </main>
+
+    <!-- ASIDE -->
+    <aside>
+        <h3>Sidebar</h3>
+        <p title="aside tag">This is additional content</p>
+    </aside>
+
+    <!-- FOOTER -->
+    <footer>
+        <p title="footer tag" contenteditable>© <span id="year"></span> HTML Learning</p>
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
