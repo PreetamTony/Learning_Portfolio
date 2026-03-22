@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <input type="checkbox" id="mobile-toggle" class="mobile-toggle">
+        <label for="mobile-toggle" class="hamburger">&#9776; Menu</label>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#features" class="dropdown-toggle">Features &#9662;</a>
+                <ul class="submenu" aria-label="submenu">
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">Animations</a></li>
+                    <li><a href="#">AI Tools</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
