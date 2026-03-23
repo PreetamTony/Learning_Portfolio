@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+}
+
+.slider {
+    max-width: 40%;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 10s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    width: 35%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.s1 {
+    background-color: crimson;
+}
+
+.s2 {
+    background-color: darkcyan;
+}
+
+.s3 {
+    background-color: cornflowerblue;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    28% {
+        transform: translateX(0);
+    }
+
+    33% {
+        transform: translateX(-33.333%);
+    }
+
+    61% {
+        transform: translateX(-33.333%);
+    }
+
+    66% {
+        transform: translateX(-66.666%);
+    }
+
+    94% {
+        transform: translateX(-66.666%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.nav label {
+    width: 14px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.nav label:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#s1:checked~.slides {
+    animation: none;
+    transform: translateX(0);
+}
+
+#s2:checked~.slides {
+    animation: none;
+    transform: translateX(-33.333%);
+}
+
+#s3:checked~.slides {
+    animation: none;
+    transform: translateX(-66.666%);
+}
+
+#s1:checked~.nav label[for="s1"],
+#s2:checked~.nav label[for="s2"],
+#s3:checked~.nav label[for="s3"] {
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    width: 300px;
+    margin: 50px auto;
+}
+
+input {
+    display: none;
+}
+
+.labels {
+    display: flex;
+}
+
+.labels label {
+    flex: 1;
+    padding: 10px;
+    background: #3073de;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.content {
+    border: 2px solid #ccc;
+    padding: 20px;
+    align-items: center;
+}
+
+.box {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+#tab1:checked~.content .box1,
+#tab2:checked~.content .box2,
+#tab3:checked~.content .box3 {
+    display: block;
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#tab1:checked~.labels label[for="tab1"],
+#tab2:checked~.labels label[for="tab2"],
+#tab3:checked~.labels label[for="tab3"] {
+    background: #1a4fb3;
+}
