@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="calc">
+        <div id="screen">0</div>
+        <div class="keys">
+            <button class="clear" onclick="clearScreen()">C</button>
+            <button class="oper" onclick="addOper('/')">&divide;</button>
+
+            <button onclick="addNum('7')">7</button>
+            <button onclick="addNum('8')">8</button>
+            <button onclick="addNum('9')">9</button>
+            <button class="oper" onclick="addOper('*')">&times;</button>
+
+            <button onclick="addNum('4')">4</button>
+            <button onclick="addNum('5')">5</button>
+            <button onclick="addNum('6')">6</button>
+            <button class="oper" onclick="addOper('-')">&minus;</button>
+
+            <button onclick="addNum('1')">1</button>
+            <button onclick="addNum('2')">2</button>
+            <button onclick="addNum('3')">3</button>
+            <button class="oper" onclick="addOper('+')">+</button>
+
+            <button class="zero" onclick="addNum('0')">0</button>
+            <button onclick="addNum('.')">.</button>
+            <button class="equal" onclick="calcResult()">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

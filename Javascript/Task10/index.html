@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopeasy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav">
+        <h1>Shopeasy</h1>
+        <div class="search">
+            <input type="text" id="search" placeholder="Search...">
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+            </select>
+        </div>
+        <div class="cart-icon">Cart <span id="count">0</span></div>
+    </div>
+
+    <div class="main">
+        <div class="grid" id="grid"></div>
+        <div class="cart-box hide" id="cart-box">
+            <h2>Your Cart</h2>
+            <div id="cart-list"></div>
+            <div class="totals">
+                <p>Subtotal: ₹<span id="sub">0</span></p>
+                <p>Tax (10%): ₹<span id="tax">0</span></p>
+                <p>Discount: -₹<span id="disc">0</span></p>
+                <h3>Total: ₹<span id="total">0</span></h3>
+            </div>
+            <button class="btn" id="close-cart">Close</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
