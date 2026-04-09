@@ -1,22 +1,44 @@
 body {
     font-family: Arial;
-    background: #dedede;
+    background-color: #f0f0f0;
 }
 
 .container {
-    width: 300px;
+    width: 350px;
     margin: 50px auto;
+    background-color: white;
+    padding: 20px;
     text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-section {
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 input {
+    width: 65%;
     padding: 10px;
-    width: 70%;
+    border-radius: 10px;
 }
 
 button {
     padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 ul {
@@ -25,15 +47,36 @@ ul {
 }
 
 li {
-    background: rgb(255, 255, 255);
+    background-color: #eee;
     margin: 10px 0;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .completed {
     text-decoration: line-through;
-    color: rgb(197, 84, 84);
+    color: #888;
+}
+
+.delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+}
+
+.clear-btn {
+    width: 100%;
+    background-color: #dc3545;
+    margin-top: 20px;
+}
+
+.drag {
+    opacity: 0.5;
+}
+
+.over {
+    background-color: #ccc;
 }

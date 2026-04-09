@@ -6,16 +6,38 @@
 </head>
 <body>
     <div class="quiz">
-        <div id="quiz-box">
+        <div id="setup-box">
+            <h2>Generate Quiz</h2>
+            <input type="text" id="topic" placeholder="Topic (e.g. Science)">
+            <input type="number" id="count" placeholder="Number of questions" min="1" max="10">
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="generate" class="btn">Start Quiz</button>
+        </div>
+
+        <div id="loading-box" class="hide">
+            <h2>Generating...</h2>
+        </div>
+
+        <div id="quiz-box" class="hide">
             <h2 id="question"></h2>
             <div id="options"></div>
+            <div id="explanation-box" class="hide">
+                <p id="explanation"></p>
+                <button id="next-btn" class="btn">Next</button>
+            </div>
         </div>
+        
         <div id="result" class="hide">
-            <h2>Score: <span id="score"></span>/3</h2>
+            <h2>Score: <span id="score"></span>/<span id="total"></span></h2>
             <p id="feedback"></p>
             <button id="restart" class="btn">Restart</button>
         </div>
     </div>
+    <script src="../Task7/config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

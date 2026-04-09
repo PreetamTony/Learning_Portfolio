@@ -1,21 +1,33 @@
-const images = document.querySelectorAll('.gallery img');
+const gallery = document.querySelector('.gallery');
 const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modal-img');
 const closeBtn = document.getElementById('close');
 
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        modalImg.src = img.getAttribute('data');
-        modal.classList.add('show');
-    });
+function openModal(src) {
+    if (!src) return;
+    modalImg.src = src;
+    modal.classList.add('show');
+}
+
+function closeModal() {
+    modal.classList.remove('show');
+    modalImg.src = "";
+}
+
+gallery.addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+        openModal(e.target.dataset.src);
+    }
 });
 
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('show');
-});
+closeBtn.addEventListener('click', closeModal);
 
 modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('show');
+    if (!modalImg.contains(e.target)) {
+        closeModal();
     }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
 });

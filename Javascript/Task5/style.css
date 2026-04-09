@@ -1,20 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f4f4f9;
+    background: #afafde;
     margin: 0;
 }
 
 .quiz {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    width: 450px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .btn {
@@ -30,8 +29,39 @@ body {
     font-size: 16px;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     background: #0056b3;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.correct {
+    background: #28a745 !important;
+}
+
+.wrong {
+    background: #dc3545 !important;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#explanation-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .hide {

@@ -7,14 +7,35 @@ const tempEl = document.getElementById('temp');
 const humEl = document.getElementById('hum');
 const condEl = document.getElementById('cond');
 
+const cache = {};
+let lastCity = "";
+let timer;
+
 btn.addEventListener('click', () => {
-    const city = cityIn.value.trim();
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        getWeather();
+    }, 500);
+});
+
+function getWeather() {
+    const city = cityIn.value.trim().toLowerCase();
+    
     if (!city) {
         showErr('Please enter a city');
         return;
     }
 
+    if (city === lastCity) return;
+    lastCity = city;
+
     err.classList.add('hide');
+
+    if (cache[city]) {
+        displayWeather(cache[city], city);
+        return;
+    }
+
     box.classList.add('hide');
 
     const options = {
@@ -39,17 +60,23 @@ btn.addEventListener('click', () => {
             return res.json();
         })
         .then(data => {
-            box.classList.remove('hide');
-            nameEl.innerText = data.city ? data.city.name : city;
-            const tempC = Math.round(data.list[0].main.temp - 273.15);
-            tempEl.innerText = tempC + 'C';
-            humEl.innerText = data.list[0].main.humidity;
-            condEl.innerText = data.list[0].weather[0].main;
+            cache[city] = data;
+            displayWeather(data, city);
         })
         .catch(() => {
+            lastCity = "";
             showErr('City not found or API error');
         });
-});
+}
+
+function displayWeather(data, city) {
+    box.classList.remove('hide');
+    nameEl.innerText = data.city && data.city.name ? data.city.name : city;
+    const tempC = Math.round(data.list[0].main.temp - 273.15);
+    tempEl.innerText = tempC + 'C';
+    humEl.innerText = data.list[0].main.humidity;
+    condEl.innerText = data.list[0].weather[0].main;
+}
 
 function showErr(msg) {
     err.classList.remove('hide');

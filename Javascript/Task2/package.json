@@ -1,0 +1,8 @@
+{
+  "name": "task2",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "mathjs": "^14.0.0"
+  }
+}
