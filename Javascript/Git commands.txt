@@ -1,0 +1,109 @@
+# Git Commands Cheatsheet & Reference Guide
+
+Git is a distributed version control system that helps track changes in your source code over time, enabling multiple developers to work together smoothly. Below is a detailed explanation of the most essential Git commands.
+
+---
+
+## 1. Initial Setup and Configuration
+Before you start using Git, you should set up your identity. This is important because every Git commit uses this information.
+
+- `git config --global user.name "[Your Name]"`
+  Sets the author name to be attached to your commits.
+
+- `git config --global user.email "[Your Email]"`
+  Sets the author email to be attached to your commits.
+
+- `git config --list`
+  Displays all your current Git configurations.
+
+---
+
+## 2. Getting Started (Creating & Cloning Repositories)
+These commands are used to start tracking a project with Git.
+
+- `git init`
+  Initializes a brand new, local, empty Git repository in your current directory. It creates a hidden `.git` folder.
+
+- `git clone [url]`
+  Creates a local copy of a remote repository (like from GitHub or GitLab). It downloads all the files, history, and branches.
+
+---
+
+## 3. Basic Snapshotting (Staging and Committing)
+These commands make up the core workflow of saving your changes.
+
+- `git status`
+  Shows the state of your working directory. It lists which files have been modified, which are staged for the next commit, and which are untracked.
+
+- `git add [file]`
+  Adds a file to the staging area. The staging area holds changes that you want to include in your next commit.
+  *Tip: Use `git add .` to stage all modified and new files at once.*
+
+- `git commit -m "[commit message]"`
+  Takes a snapshot of the changes in the staging area and saves them to the local repository permanently. The message should briefly describe what changes were made.
+
+- `git diff`
+  Shows the exact lines of code that were changed but haven't been staged yet.
+  *Tip: Use `git diff --staged` to see changes that are staged but not yet committed.*
+
+---
+
+## 4. Branching and Merging
+Branches allow you to work on different features or fixes without affecting the main codebase.
+
+- `git branch`
+  Lists all local branches in the current repository. The active branch will have an asterisk (*) next to it.
+  *Tip: Use `git branch [branch-name]` to create a new branch.*
+
+- `git checkout [branch-name]` (or `git switch [branch-name]`)
+  Switches your working directory to the specified branch.
+
+- `git checkout -b [branch-name]` (or `git switch -c [branch-name]`)
+  Creates a new branch and immediately switches to it.
+
+- `git merge [branch-name]`
+  Combines the specified branch's history into your current active branch (usually merging a feature branch into `main`).
+
+---
+
+## 5. Working with Remote Repositories
+These commands help you sync your local repository with a remote server.
+
+- `git remote -v`
+  Lists the URLs of the remote repositories currently connected to your local repo.
+
+- `git push origin [branch-name]`
+  Uploads all local commits from the specified branch to the remote repository.
+
+- `git pull origin [branch-name]`
+  Fetches the latest changes from the remote repository and immediately merges them into your local branch.
+
+- `git fetch`
+  Downloads changes from the remote repository but does NOT merge them into your working files. Useful for reviewing changes before integrating them.
+
+---
+
+## 6. Undoing Changes
+Mistakes happen. These commands help you revert changes.
+
+- `git restore [file]`
+  Discards uncommitted changes in a specific file, returning it to its last committed state.
+
+- `git reset [commit]`
+  Moves the current branch backward to a specific commit. 
+  *Tip: `git reset --soft [commit]` keeps your changes staged, while `git reset --hard [commit]` permanently throws away any uncommitted changes.*
+
+- `git revert [commit]`
+  Creates a new commit that undoes the changes made in a previous, specific commit. This is the safest way to undo changes that have already been pushed to a remote repository.
+
+---
+
+## 7. Inspecting History
+Checking what has happened in the project over time.
+
+- `git log`
+  Shows a chronological history of all commits for the current branch. 
+  *Tip: Use `git log --oneline` for a condensed, single-line view of the commit history.*
+
+- `git show [commit-hash]`
+  Displays the metadata and specific line-by-line changes made in a specific commit.
